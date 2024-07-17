@@ -3,10 +3,12 @@ package juno;
 import java.util.*;
 
 public class Scribbling {
+    public static final int MIN_POKEMONS = 0;
+
     public static void main(String[] args) {
         List<PocketMon> myPocketMonList = new ArrayList<>();
         List<PocketMon> pocketMonList = createPickupPocketMonList();
-        if (pocketMonList.size() < 0) {
+        if (pocketMonList.size() < MIN_POKEMONS) {
             throw new RuntimeException("포켓몬 리스트가 피어 있습니다.");
         }
         PocketMon pickupPocketMon = randmonPickupFrom(pocketMonList);
