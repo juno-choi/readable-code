@@ -6,6 +6,9 @@ public class Scribbling {
     public static void main(String[] args) {
         List<PocketMon> myPocketMonList = new ArrayList<>();
         List<PocketMon> pocketMonList = createPickupPocketMonList();
+        if (pocketMonList.size() < 0) {
+            throw new RuntimeException("포켓몬 리스트가 피어 있습니다.");
+        }
         PocketMon pickupPocketMon = randmonPickupFrom(pocketMonList);
         String resultText = pocketMonAddResultText(myPocketMonList, pickupPocketMon);
         System.out.println(resultText);
